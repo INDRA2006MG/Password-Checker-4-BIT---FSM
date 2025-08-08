@@ -73,11 +73,14 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 ---
 # 🗂️ – File collection
+
 [🧾PROBLEM STATEMENT](https://github.com/INDRA2006MG/Password-Checker-4-BIT---FSM/blob/main/Problem%20statement)
 
 [🧾 TEST BENCH ](https://github.com/INDRA2006MG/Password-Checker-4-BIT---FSM/blob/main/Password%20Checker.tb.v)
 
 [🧾 DESIGN ](https://github.com/INDRA2006MG/Password-Checker-4-BIT---FSM/blob/main/Password%20Checker.v)
+
+[🧾 CLOCK MODULE](
 
 <img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
 
