@@ -5,6 +5,8 @@ This repository contains a digital password checker implemented as a Finite Stat
 
 The FSM waits for a 4-bit input supplied all at once, then verifies whether the entered sequence matches the predefined password. On successful authentication, the system outputs a signal indicating access granted.
 
+---
+
 ## ⚙️ Features
 
 - **FSM Stages:**  
@@ -19,9 +21,12 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 - **Preset Password:**  
   Fixed 4-bit password defined in the code (default example: `4'b1010`), easily customizable.
+  
+  ---
 # 🛠️ Specifications
 - **Software**: Vivado ML Edition (Standard) 2024.2
 - **Hardware**: ZedBoard Zynq-7000 ARM / FPGA SoC Development Board
+ ---
 # 🔌 Inputs
 | Name   | Description        |
 |--------|--------------------|
@@ -29,12 +34,16 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 | reset  | Reset              |
 | S0-S3  | Password input bits|
 
+---
+
 # 💡 Outputs
 | Name           | Description                  |
 |----------------|------------------------------|
 | access_granted | High if password is correct  |
 | error          | High if password is wrong    |
 | time_out         | High after 3 wrong attempts  |
+
+---
 
 # 📊 FSM State Log (Based on Simulation)
 
@@ -46,6 +55,8 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 | `0101`         | ❌ Wrong password #3 → Locked   | `LOCKED`   | 0              | 1     | 1 ✅              |
 | `1011`         | 🔒 Input blocked while locked   | `LOCKED`   | 0              | 0     | 1                |
 | `1011`         | 🔁 Reset followed by correct pw | `GRANTED`  | 1              | 0     | 0                |
+
+---
 
 
 # 🔄 FSM Transitions
@@ -60,8 +71,73 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 | `DENIED`      | System not locked          | `IDLE`     | Return to idle for retry             |
 | `LOCKED`      | Reset = 1                  | `IDLE`     | Unlock only on reset                 |
 
+---
+
 
 
 <img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
+
+# 🧪 Simulation Demo
+
+## 🎥 Demo Video
+[Watch the Simulation Video](#) <!-- Replace # with the actual YouTube or drive link -->
+
+## 📸 Waveform Screenshot
+![Waveform Screenshot](waveform.png) <!-- Replace with your actual image filename or path -->
+
+---
+
+## 🔍 Reports
+
+### ⛓️ Resource Utilization (Post-Synthesis)
+> *(Auto-fill values after synthesis using Vivado/Quartus)*
+
+| Resource   | Usage | Description            |
+|------------|-------|------------------------|
+| LUTs       | --    | Lookup Tables          |
+| Flip-Flops | --    | Sequential Elements    |
+| IOBs       | --    | Input/Output Buffers   |
+
+---
+
+### ⏱️ Timing Summary
+> *(From timing report in synthesis/implementation)*
+
+| Parameter           | Value     |
+|---------------------|-----------|
+| Clock Period        | x.xx ns   |
+| Max Frequency       | xxx MHz   |
+| Setup/Hold Violations | None    |
+
+---
+
+### ⚡ Power Summary
+> *(Can be filled from Power Report in tools like Vivado/Quartus)*
+
+| Component | Dynamic (mW) | Static (mW) |
+|-----------|---------------|-------------|
+| Logic     | --            | --          |
+| Clock     | --            | --          |
+| I/O       | --            | --          |
+
+## 🔌 Pin Assignment
+
+> 📍 Based on the FPGA constraints shown in Vivado.
+
+| Signal         | Direction | Pin  | Description              |
+|----------------|-----------|------|--------------------------|
+| password[0]    | Input     | F21  | Password bit 0 (LSB)     |
+| password[1]    | Input     | H22  | Password bit 1           |
+| password[2]    | Input     | G22  | Password bit 2           |
+| password[3]    | Input     | F22  | Password bit 3 (MSB)     |
+| clk            | Input     | Y9   | Clock signal             |
+| reset          | Input     | H19  | Active-high reset        |
+| enter          | Input     | M15  | Enter to check password  |
+| access_granted | Output    | U14  | High when password matches |
+| error          | Output    | U19  | High when incorrect password |
+
+> ⚠️ All pins are configured as `LVCMOS18`, with Drive Strength = 12, Slew Rate = SLOW (for outputs).
+
+
 
 
