@@ -84,6 +84,14 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 [🧾 CLOCK MODULE](https://github.com/INDRA2006MG/Password-Checker-4-BIT---FSM/blob/main/Clock%20Module)
 
+# 🧩 SCHEMATIC BLOCK
+![WhatsApp Image 2025-08-08 at 15 45 22_63604bb1](https://github.com/user-attachments/assets/ac8b8f1b-0f22-4121-ac1f-74138210420e)
+
+# 🎛️ Simulation Waveforms
+![WhatsApp Image 2025-08-08 at 15 44 51_53df435e](https://github.com/user-attachments/assets/5afcb352-52df-404c-94e4-757ad3e7055f)
+
+
+
 <img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
 
 # 🧪 Simulation Demo
