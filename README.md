@@ -11,16 +11,6 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
   `IDLE` → `CHECK_PASSWORD` → `ACCESS_GRANTED` / `ACCESS_DENIED`  
   (The FSM waits for input, checks the entire 4-bit password simultaneously, then signals the result.)
 
-- **Inputs:**  
-  - `password_in[3:0]` – 4-bit input password provided all at once  
-  - `start` – Signal to trigger password verification  
-  - `reset` – Resets the FSM to `IDLE` state  
-
-- **Outputs:**  
-  - `access_granted` – Asserted high if the input password matches the preset password  
-  - `access_denied` – Asserted high if the input password is incorrect  
-  - `busy` – Indicates the FSM is busy checking the password  
-
 - **Operation:**  
   - Waits in `IDLE` state until `start` signal is asserted  
   - On `start`, FSM moves to `CHECK_PASSWORD` state and compares input with stored password  
@@ -32,47 +22,46 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 # 🛠️ Specifications
 - **Software**: Vivado ML Edition (Standard) 2024.2
 - **Hardware**: ZedBoard Zynq-7000 ARM / FPGA SoC Development Board
-## 🔌 Inputs
+# 🔌 Inputs
 | Name   | Description        |
 |--------|--------------------|
 | clk    | Clock              |
 | reset  | Reset              |
 | S0-S3  | Password input bits|
 
-## 💡 Outputs
+# 💡 Outputs
 | Name           | Description                  |
 |----------------|------------------------------|
 | access_granted | High if password is correct  |
 | error          | High if password is wrong    |
 | time_out         | High after 3 wrong attempts  |
 
-## ⚙️ FSM States
+# 📊 FSM State Log (Based on Simulation)
 
-| State Name | Code | Description                                               |
-|------------|------|-----------------------------------------------------------|
-| `IDLE`     | 00   | Waits for a 4-bit password entry                          |
-| `CHECK`    | 01   | Compares input with preset password                       |
-| `GRANTED`  | 10   | Correct password entered → Grants access                  |
-| `DENIED`   | 11   | Wrong password → Increments error counter                 |
-| `LOCKED`   | N/A  | 3 wrong attempts → System is locked until reset is given  |
+| Input Password | Event Description              | FSM State  | access_granted | error | locked (timeout) |
+|----------------|--------------------------------|------------|----------------|-------|------------------|
+| `1011`         | ✅ Correct password             | `GRANTED`  | 1              | 0     | 0                |
+| `1001`         | ❌ Wrong password #1            | `DENIED`   | 0              | 1     | 0                |
+| `0000`         | ❌ Wrong password #2            | `DENIED`   | 0              | 1     | 0                |
+| `0101`         | ❌ Wrong password #3 → Locked   | `LOCKED`   | 0              | 1     | 1 ✅              |
+| `1011`         | 🔒 Input blocked while locked   | `LOCKED`   | 0              | 0     | 1                |
+| `1011`         | 🔁 Reset followed by correct pw | `GRANTED`  | 1              | 0     | 0                |
 
-### 🔄 Transitions:
-- `IDLE → CHECK` on clock edge after password is entered
-- `CHECK → GRANTED` if input == `1011`
-- `CHECK → DENIED` if input ≠ `1011`
-- `DENIED → LOCKED` if error count ≥ 3
-- `GRANTED or DENIED → IDLE` if system not locked
-- `LOCKED → IDLE` only on reset
 
-### 🔄 FSM Transitions
+# 🔄 FSM Transitions
 
-| From State | To State | Condition                         |
-|------------|----------|-----------------------------------|
-| `IDLE`     | `CHECK`  | On clock edge after input is given |
-| `CHECK`    | `GRANTED`| If input == `1011`                |
-| `CHECK`    | `DENIED` | If input ≠ `1011`                 |
-| `DENIED`   | `LOCKED` | If error count ≥ 3                |
-| `GRANTED`  | `IDLE`   | If system is not locked           |
-| `DENIED`   | `IDLE`   | If system is not locked           |
-| `LOCKED`   | `IDLE`   | Only on reset                     |
+| Current State | Input Condition            | Next State | Description                          |
+|---------------|----------------------------|------------|--------------------------------------|
+| `IDLE`        | Password entered           | `CHECK`    | Start checking on clock edge         |
+| `CHECK`       | Input == `1011`            | `GRANTED`  | Password matched                     |
+| `CHECK`       | Input ≠ `1011`             | `DENIED`   | Password incorrect                   |
+| `DENIED`      | Error count ≥ 3            | `LOCKED`   | Lock system after 3 failed attempts  |
+| `GRANTED`     | System not locked          | `IDLE`     | Return to idle after access granted  |
+| `DENIED`      | System not locked          | `IDLE`     | Return to idle for retry             |
+| `LOCKED`      | Reset = 1                  | `IDLE`     | Unlock only on reset                 |
+
+
+
+<img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
+
 
