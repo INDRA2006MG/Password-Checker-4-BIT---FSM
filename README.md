@@ -1,13 +1,13 @@
 # Password-Checker-4-BIT-FSM
 
-## 📌Project Overview
+# 📌 Project Configuration
 This repository contains a digital password checker implemented as a Finite State Machine (FSM) for authenticating a fixed 4-bit password. The design uses sequential logic suitable for implementation in hardware description languages such as Verilog or VHDL.
 
 The FSM waits for a 4-bit input supplied all at once, then verifies whether the entered sequence matches the predefined password. On successful authentication, the system outputs a signal indicating access granted.
 
 ---
 
-## ⚙️ Features
+## ⚙️ Attribute
 
 - **FSM Stages:**  
   `IDLE` → `CHECK_PASSWORD` → `ACCESS_GRANTED` / `ACCESS_DENIED`  
@@ -27,7 +27,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 - **Software**: Vivado ML Edition (Standard) 2024.2
 - **Hardware**: ZedBoard Zynq-7000 ARM / FPGA SoC Development Board
  ---
-# 🔌 Inputs
+# 🔌Inputs
 | Name   | Description        |
 |--------|--------------------|
 | clk    | Clock              |
@@ -36,7 +36,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 ---
 
-# 💡 Outputs
+# 💡Outputs
 | Name           | Description                  |
 |----------------|------------------------------|
 | access_granted | High if password is correct  |
