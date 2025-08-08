@@ -90,6 +90,10 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 # 🎛️ Simulation Waveforms
 ![WhatsApp Image 2025-08-08 at 15 44 51_53df435e](https://github.com/user-attachments/assets/5afcb352-52df-404c-94e4-757ad3e7055f)
 
+# 🔧 Implementation Design
+<img width="1076" height="467" alt="image" src="https://github.com/user-attachments/assets/5878d2f9-021c-47a3-852f-d0e29cbc8f5e" />
+
+
 
 
 <img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
