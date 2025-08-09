@@ -189,4 +189,3 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 
 
-
