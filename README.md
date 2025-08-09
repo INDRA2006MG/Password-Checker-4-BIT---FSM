@@ -117,7 +117,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 # 🧪 Simulation Demo
 
 ## 🎥 Demo Video
-[Watch the Simulation Video](#) <!-- Replace # with the actual YouTube or drive link -->
+[Watch the Simulation Video](https://drive.google.com/file/d/10txqIYbCHSzcoH6OyQAw9UrUZ_sKm43Y/view?usp=sharing) <!-- Replace # with the actual YouTube or drive link -->
 
 
 ---
