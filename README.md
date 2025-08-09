@@ -93,7 +93,10 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ---
 
 # 🧩 SCHEMATIC BLOCK
-![WhatsApp Image 2025-08-08 at 15 45 22_63604bb1](https://github.com/user-attachments/assets/ac8b8f1b-0f22-4121-ac1f-74138210420e)
+<img width="1564" height="793" alt="image" src="https://github.com/user-attachments/assets/1a7e91e2-9c59-45fa-b33f-44bfadd31e92" />
+<img width="1162" height="402" alt="image" src="https://github.com/user-attachments/assets/225d2803-388d-41ac-8b8c-8b56e670e2ed" />
+
+
 
 ---
 
@@ -103,7 +106,8 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ---
 
 # 🔧 IMPLEMENTATION DESIGN
-<img width="1076" height="467" alt="image" src="https://github.com/user-attachments/assets/5878d2f9-021c-47a3-852f-d0e29cbc8f5e" />
+<img width="1172" height="533" alt="image" src="https://github.com/user-attachments/assets/078adbc5-4e9f-4fc3-a580-6066c10435e4" />
+
 
 ---
 
@@ -176,6 +180,14 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 ##  🗂️ Source File
 <img width="419" height="455" alt="image" src="https://github.com/user-attachments/assets/d6491ed3-6678-42f3-bb1a-d95732cea2cf" />
+
+---
+
+##  📰 Summary
+<img width="804" height="444" alt="image" src="https://github.com/user-attachments/assets/a5d4619c-90ac-4ad1-a84d-2fa2511bec3d" />
+
+---
+
 
 
 
