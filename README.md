@@ -119,8 +119,6 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ## 🎥 Demo Video
 [Watch the Simulation Video](#) <!-- Replace # with the actual YouTube or drive link -->
 
-## 📸 Waveform Screenshot
-![Waveform Screenshot](waveform.png) <!-- Replace with your actual image filename or path -->
 
 ---
 
