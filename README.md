@@ -133,33 +133,23 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ### ⛓️ Resource Utilization (Post-Synthesis)
 
 
-| Resource   | Usage | Description            |
-|------------|-------|------------------------|
-| LUTs       | --    | Lookup Tables          |
-| Flip-Flops | --    | Sequential Elements    |
-| IOBs       | --    | Input/Output Buffers   |
+<img width="549" height="297" alt="image" src="https://github.com/user-attachments/assets/7098dea6-a745-4b21-9b91-61afe139dcd4" />
+
 
 ---
 
 ### ⏱️ Timing Summary
 
 
-| Parameter           | Value     |
-|---------------------|-----------|
-| Clock Period        | x.xx ns   |
-| Max Frequency       | xxx MHz   |
-| Setup/Hold Violations | None    |
+<img width="1052" height="267" alt="image" src="https://github.com/user-attachments/assets/8a51b58f-6620-4445-a83a-13c192ac8439" />
+
 
 ---
 
 ### ⚡ Power Summary
 
 
-| Component | Dynamic (mW) | Static (mW) |
-|-----------|---------------|-------------|
-| Logic     | --            | --          |
-| Clock     | --            | --          |
-| I/O       | --            | --          |
+<img width="603" height="286" alt="image" src="https://github.com/user-attachments/assets/9cc3dd37-09e7-4db3-a91d-e4bcf4502277" />
 
 ## 🔌 Pin Assignment
 
@@ -177,7 +167,17 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 | access_granted | Output    | U14  | High when password matches |
 | error          | Output    | U19  | High when incorrect password |
 
+<img width="1593" height="442" alt="image" src="https://github.com/user-attachments/assets/151cf3ec-cdb6-4a3f-89d8-9cf6793b3d02" />
+
+
 > ⚠️ All pins are configured as `LVCMOS18`, with Drive Strength = 12, Slew Rate = SLOW (for outputs).
+
+---
+
+##  🗂️ Source File
+<img width="419" height="455" alt="image" src="https://github.com/user-attachments/assets/d6491ed3-6678-42f3-bb1a-d95732cea2cf" />
+
+
 
 
 
