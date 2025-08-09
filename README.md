@@ -127,7 +127,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ## 🔍 Reports
 
 ### ⛓️ Resource Utilization (Post-Synthesis)
-> *(Auto-fill values after synthesis using Vivado/Quartus)*
+
 
 | Resource   | Usage | Description            |
 |------------|-------|------------------------|
@@ -138,7 +138,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ---
 
 ### ⏱️ Timing Summary
-> *(From timing report in synthesis/implementation)*
+
 
 | Parameter           | Value     |
 |---------------------|-----------|
@@ -149,7 +149,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 ---
 
 ### ⚡ Power Summary
-> *(Can be filled from Power Report in tools like Vivado/Quartus)*
+
 
 | Component | Dynamic (mW) | Static (mW) |
 |-----------|---------------|-------------|
