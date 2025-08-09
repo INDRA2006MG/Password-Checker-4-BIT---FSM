@@ -72,6 +72,12 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 | `LOCKED`      | Reset = 1                  | `IDLE`     | Unlock only on reset                 |
 
 ---
+
+# 🖼️State Diagram
+![WhatsApp Image 2025-08-09 at 12 20 31_bb7b88da](https://github.com/user-attachments/assets/3fdc577a-a1cc-4587-853d-a5cff22f6fab)
+
+---
+
 # 🗂️ – File collection
 
 [🧾PROBLEM STATEMENT](https://github.com/INDRA2006MG/Password-Checker-4-BIT---FSM/blob/main/Problem%20statement)
