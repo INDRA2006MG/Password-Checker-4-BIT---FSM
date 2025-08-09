@@ -94,6 +94,7 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 # 🧩 SCHEMATIC BLOCK
 <img width="1564" height="793" alt="image" src="https://github.com/user-attachments/assets/1a7e91e2-9c59-45fa-b33f-44bfadd31e92" />
+
 <img width="1162" height="402" alt="image" src="https://github.com/user-attachments/assets/225d2803-388d-41ac-8b8c-8b56e670e2ed" />
 
 
@@ -116,11 +117,6 @@ The FSM waits for a 4-bit input supplied all at once, then verifies whether the 
 
 ---
 
-
-
-
-
-<img width="1366" height="907" alt="image" src="https://github.com/user-attachments/assets/8d14effd-a2a2-440f-885c-848d35dac881" />
 
 ---
 
